@@ -5,10 +5,10 @@ import ImportNotes from "~/components/sidebar/components/import-notes";
 import Mocked from "~/components/sidebar/components/mocked";
 import {IProps} from "~/components/sidebar/types";
 
-const Sidebar: React.FC<IProps> = ({ onAdd, onExport, onImport, onVideoUpload, onMockApply }) => {
+const Sidebar: React.FC<IProps> = ({ onAdd, onExport, onImport, onVideoUpload, onMockApply, onMockReset }) => {
   return (
     <div className='flex flex-col gap-4 items-center md:w-[16rem]'>
-      <Mocked onApply={onMockApply} />
+      <Mocked onApply={onMockApply} onReset={onMockReset} />
       <ImportVideo onUpload={onVideoUpload} />
       <NoteControls onAdd={onAdd} />
       <ImportNotes onImport={onImport} onExport={onExport} />

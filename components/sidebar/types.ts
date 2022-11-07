@@ -6,4 +6,5 @@ export interface IProps {
   onImport: (file: File) => void;
   onVideoUpload: (file: File | string) => void;
   onMockApply: () => void;
+  onMockReset: () => void;
 }

@@ -25,7 +25,7 @@ const ImportVideo: React.FC<{ onUpload: (val: File | string) => void}> = ({onUpl
       <div className='flex flex-col gap-4'>
         <div className='flex'>
           <Input
-            label='Video url'
+            label='Url (with http(s)://)'
             value={src}
             onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSrc(e.target.value)}
           />

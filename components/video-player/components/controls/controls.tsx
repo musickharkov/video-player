@@ -7,7 +7,7 @@ import {IControls} from "~/components/video-player/types";
 const Controls: React.FC<IControls> = ({ isPlaying, volume, progress, duration, notes, onPlayPause, onVolumeChange, onProgressChange, onMute }) => {
   return (
     <div className='overflow-hidden absolute flex gap-2 pb-2 flex flex-wrap top-full -translate-y-full left-0 w-full bg-black text-white select-none'>
-      <ProgressBar value={progress / duration} onChange={onProgressChange} notes={notes} maxValue={duration} />
+      <ProgressBar value={(progress / duration) || 0} onChange={onProgressChange} notes={notes} maxValue={duration} />
       <div className='w-full flex justify-between gap-2 px-4'>
         <div className='flex w-fit items-center gap-4'>
           <IconButton

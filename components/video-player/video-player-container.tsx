@@ -27,6 +27,11 @@ const VideoPlayerContainer: React.FC<IProps> = ({ src, notes }) => {
   }, [])
 
   useEffect(() => {
+    setDuration(0)
+    setProgress(0)
+  }, [src])
+
+  useEffect(() => {
     setShowControls(hovered || !isPlaying)
   }, [hovered, isPlaying])
 
@@ -82,11 +87,15 @@ const VideoPlayerContainer: React.FC<IProps> = ({ src, notes }) => {
 
   const onHover = () => {
     clearTimeout(hoverTimeout.current);
-    setHovered(true);
+    if (isPlaying) {
+      setHovered(true);
+    }
   }
 
   const onBlur = () => {
-    hoverTimeout.current = setTimeout(() => setHovered(false), 2000);
+    if (isPlaying) {
+      hoverTimeout.current = setTimeout(() => setHovered(false), 2000);
+    }
   }
 
   return (

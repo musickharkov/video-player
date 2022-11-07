@@ -54,6 +54,11 @@ const IndexPage: NextPage = () => {
     setSrc(mockedSrc)
   }
 
+  const onMockReset = () => {
+    setNotes([])
+    setSrc('')
+  }
+
   return (
     <div className='flex gap-6 pt-4 px-4'>
       <Sidebar
@@ -62,6 +67,7 @@ const IndexPage: NextPage = () => {
         onImport={onImportNotes}
         onVideoUpload={onVideoUpload}
         onMockApply={onMockApply}
+        onMockReset={onMockReset}
       />
       <VideoPlayerContainer
         src={src}
