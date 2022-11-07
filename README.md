@@ -1,6 +1,7 @@
 ## Description
 
-The Video Player app with custom controls. Also, this app has the ability to add and view notes on specified time intervals.
+The Video Player app with custom controls and with ability to add and view notes on specified time intervals.
+Also, the presence of notes is displayed on the video playback progress line.
 
 ### Functionality:
 - Uploading video from local files
